@@ -1,0 +1,31 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.form {
+  // width: 100%;
+  display: flex;
+  align-self: center;
+  @include tablet {
+    margin-right: 50px;
+  }
+  input {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 300px;
+    outline-color: $fourthColor;
+    border: none;
+    padding: 0 40px 0 20px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+  }
+  button {
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    margin-left: -40px;
+    cursor: pointer;
+    img {
+      width: 20px;
+    }
+  }
+}
