@@ -1,0 +1,8 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.loading {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,52 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.containerCard {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  flex-shrink: 0;
+  background-color: $sixthColor;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  @include tablet {
+    margin-right: 40px;
+  }
+  .cardPhoto {
+    margin-bottom: 20px;
+    img {
+      height: 200px;
+      width: 300px;
+      object-fit: cover;
+    }
+  }
+  .name {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    h1 {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+  }
+  .description {
+    padding: 0 15px;
+    margin-bottom: 30px;
+    h2 {
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 400;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .priceCount {
+    display: flex;
+    padding: 0 15px;
+    .price {
+      display: flex;
+    }
+  }
+}
