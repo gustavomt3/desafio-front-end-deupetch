@@ -1,0 +1,85 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.containerProductCart {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: max-content;
+  .picture {
+    margin-right: 15px;
+    img {
+      max-width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  .infos {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    .titleRemove {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      p {
+        font-weight: 900;
+        font-size: 1.125rem;
+        margin-right: 5px;
+      }
+      button {
+        width: 25px;
+        height: 25px;
+        background-color: $secondColor;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    .priceQtd {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      .descriptionPrice {
+        max-width: 80px;
+        .description {
+          .dcpt {
+            font-size: 0.875rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            margin-bottom: 5px;
+          }
+          .price {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 900;
+            span {
+              color: #5f5f5f;
+              font-size: 0.75rem;
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+      .qtd {
+        display: flex;
+        align-items: center;
+        button {
+          width: 25px;
+          height: 25px;
+        }
+        span {
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}
