@@ -1,0 +1,20 @@
+@import '../../GlobalStyles/vars-mixins';
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  min-width: max-content;
+  align-self: center;
+  background-color: $seventhColor;
+  border: none;
+  border-radius: 5px;
+  color: $primaryColor;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.5;
+  }
+}

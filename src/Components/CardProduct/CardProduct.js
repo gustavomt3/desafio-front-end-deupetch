@@ -2,6 +2,10 @@
 import React from 'react';
 //Styles
 import styles from './CardProduct.module.scss';
+//Components
+import ButtonQtd from '../ButtonQtd/ButtonQtd';
+//Images
+import iconCart from '../../Assets/icon-cart.svg';
 
 const CardProduct = ({ data }) => {
   return (
@@ -17,14 +21,18 @@ const CardProduct = ({ data }) => {
       </div>
       <div className={styles.priceCount}>
         <div className={styles.price}>
-          <span>$</span>
-          <p>{data.price}</p>
+          <span>$</span> <p>{data.price}</p>
         </div>
         <div className={styles.countShop}>
           <div className={styles.count}>
-            <button className={styles.buttonAdd}>+</button>
+            <ButtonQtd>-</ButtonQtd>
             <span>0</span>
-            <button className={styles.buttonRemove}>-</button>
+            <ButtonQtd>+</ButtonQtd>
+          </div>
+          <div className={styles.shop}>
+            <button className={styles.buttonCart}>
+              <img src={iconCart} alt="Icon Cart" />
+            </button>
           </div>
         </div>
       </div>
