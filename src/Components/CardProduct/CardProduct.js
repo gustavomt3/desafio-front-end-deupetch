@@ -17,8 +17,6 @@ const CardProduct = ({ data }) => {
 
   function modQtd(value) {
     setCountQtd(countQtd + value);
-    data.qtd = countQtd + 1;
-    console.log('data.qtd: ' + data.qtd, 'countQtd: ' + countQtd);
   }
 
   return (

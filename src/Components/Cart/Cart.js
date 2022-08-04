@@ -16,6 +16,11 @@ const Cart = () => {
   const [activeCart, setActiveCart] = React.useState(false);
   const actveClass = activeCart ? styles.active : '';
 
+  let valorTotalProducts = state.products.reduce(
+    (total, item) => (total += item.qtd * item.price),
+    0,
+  );
+
   return (
     <>
       <button
@@ -34,10 +39,17 @@ const Cart = () => {
         </button>
         <ul className={styles.containerCart}>
           {state.products &&
-            state.products.map((stateInt) => {
-              return <CardProductCart key={stateInt.id} stateInt={stateInt} />;
+            state.products.map((product) => {
+              return <CardProductCart key={product.id} product={product} />;
             })}
         </ul>
+        <div className={styles.total}>
+          <span>Total:</span>
+          <p>
+            <span className={styles.cifra}>$</span>
+            {valorTotalProducts}
+          </p>
+        </div>
       </div>
     </>
   );

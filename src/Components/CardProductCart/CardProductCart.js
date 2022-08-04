@@ -1,5 +1,5 @@
 //React
-import React from 'react';
+import React, { useEffect } from 'react';
 //Context
 import { GlobalContext } from '../../Contexts/GlobalState';
 //Styles
@@ -9,32 +9,35 @@ import iconTrash from '../../Assets/icon-trash.svg';
 //Components
 import ButtonQtd from '../ButtonQtd/ButtonQtd';
 
-const CardProductCart = ({ stateInt }) => {
+const CardProductCart = ({ product }) => {
   //Context
-  const { removeToCart, state } = React.useContext(GlobalContext);
+  const { removeToCart, modToCart } = React.useContext(GlobalContext);
   //Component
-  const [countQtd, setCountQtd] = React.useState(stateInt.qtd);
+  const [countQtd, setCountQtd] = React.useState(product.qtd);
 
-  function modQtd() {
-    setCountQtd(countQtd + 1);
-    stateInt.qtd = countQtd + 1;
+  useEffect(() => {
+    setCountQtd(product.qtd);
+  }, [product.qtd]);
+
+  function modQtd(value) {
+    setCountQtd(countQtd + value);
   }
 
   return (
     <li className={styles.containerProductCart}>
       <div className={styles.picture}>
         <img
-          src={stateInt.avatar.replace('food', `${stateInt.name}?lock=12`)}
-          alt={stateInt.name}
+          src={product.avatar.replace('food', `${product.name}?lock=12`)}
+          alt={product.name}
         />
       </div>
       <div className={styles.infos}>
         <div className={styles.titleRemove}>
-          <p>{stateInt.name}</p>
+          <p>{product.name}</p>
           <button
             className={styles.remove}
             onClick={() => {
-              removeToCart(stateInt);
+              removeToCart(product);
             }}
           >
             <img src={iconTrash} alt="Icon Trash" />
@@ -43,10 +46,10 @@ const CardProductCart = ({ stateInt }) => {
         <div className={styles.priceQtd}>
           <div className={styles.descriptionPrice}>
             <div className={styles.description}>
-              <p className={styles.dcpt}>{stateInt.description}</p>
+              <p className={styles.dcpt}>{product.description}</p>
               <p className={styles.price}>
                 <span>$</span>
-                {stateInt.price}
+                {product.price}
               </p>
             </div>
           </div>
@@ -54,6 +57,7 @@ const CardProductCart = ({ stateInt }) => {
             <ButtonQtd
               onClick={() => {
                 modQtd(-1);
+                modToCart(product, -1);
               }}
               disabled={countQtd === 1 ? 'disabled' : ''}
             >
@@ -63,6 +67,7 @@ const CardProductCart = ({ stateInt }) => {
             <ButtonQtd
               onClick={() => {
                 modQtd(1);
+                modToCart(product, +1);
               }}
               disabled={countQtd === 99 ? 'disabled' : ''}
             >

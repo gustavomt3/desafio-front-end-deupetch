@@ -76,24 +76,29 @@ export const GlobalProvider = (props) => {
   const ADD_CART = 'ADD_CART';
   const REMOVE_CART = 'REMOVE_CART';
   const ADD_QTD = 'ADD_QTD';
+  const MOD_QTD = 'MOD_QTD';
 
   //actions
-  function addToCart(value, countQtd) {
+  function addToCart(data, countQtd) {
     //Verifica se o item adicionado já existe na lista
     let compareItemsProducts = state.products.findIndex(
-      (val) => val.id === value.id,
+      (val) => val.id === data.id,
     );
     if (compareItemsProducts < 0) {
       //Adiciona Card no Carrtinho
-      setState({ type: ADD_CART, payload: value });
+      setState({ type: ADD_CART, payload: { data, countQtd } });
     } else {
       //Se já existir o item no Carrinho, adiciona a quantidade do item setado no count
-      setState({ type: ADD_QTD, payload: countQtd });
+      setState({ type: ADD_QTD, payload: { data, countQtd } });
     }
   }
   //Remove o Item do Carrinho
-  function removeToCart(value) {
-    setState({ type: REMOVE_CART, payload: value.id });
+  function removeToCart(data) {
+    setState({ type: REMOVE_CART, payload: data.id });
+  }
+  //Modifica Itens do Card Cart
+  function modToCart(data, countQtd) {
+    setState({ type: MOD_QTD, payload: { data, countQtd } });
   }
 
   //--------------------------------------------
@@ -108,6 +113,8 @@ export const GlobalProvider = (props) => {
         addToCart,
         removeToCart,
         data,
+        ADD_QTD,
+        modToCart,
       }}
     >
       {props.children}
