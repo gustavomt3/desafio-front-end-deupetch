@@ -15,5 +15,5 @@ jobs:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /domains/bobsburguer.website/public_html/
+          server-dir: /domains/deupetch.store/public_html/
           local-dir: ./build/
