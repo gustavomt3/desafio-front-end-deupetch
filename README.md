@@ -1,44 +1,53 @@
+<p align="center">
+  <img src=".github/bobs-burguer-logo.svg" alt="Bobs Burguer Logo" />
+</p>
 
-## Objetivo
-Construir uma aplicação web em ReactJS que tenha o comportamento de um e-commerce.
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gustavomt3/cartas-aleatorias">
+  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/gustavomt3/cartas-aleatorias/master">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gustavomt3/cartas-aleatorias">
+</p>
+<p align="center">
+  <img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=2b9348">
+</p>
+<br>
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+# Documentação
 
+## Descrição do projeto
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de produtos vinda da API de referência.  
+O projeto consiste em um baralho aleatório do filme Bob's Burguer. Na primeira tela você tem que por seu nome para ter acesso as cartas, na segunda tela você recebe 5 cartas aletórias e pode puxar mais 3 cartas e embaralhar as mesmas. As cartas possuem uma foto, uma descrição e pontuação aleatória.
 
-•	Ao digitar no campo de busca, deve-se trazer somente os resultados digitados.  
+## Tecnologias
 
-•	Ao clicar no botão "Adicionar ao carrinho", deve-se inserir o produto ao carrinho de compras.  
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-•	No carrinho de compras, pode-se remover os produtos.  
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org)
 
+### Pré-Processadores
 
+- [SASS](https://sass-lang.com/)
 
-## Referências
-•	API de produtos: https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos
+## Deploy do projeto
 
+##### Link de acesso: https://bobsburguer.website/
 
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de produtos permite chamadas diretas do navegador.
+## Como executar
 
-2. Design de livre escolha.
+#### Como rodar o projeto
 
-3. O teste tem gaps propositais para você sugerir soluções, desenvolver ideias e provar na prática o porque a sua decisão pode ter um impacto positivo nessa tarefa.
+```bash
+# Instalar as dependências
+$ npm install
+# Iniciar o projeto
+$ npm start
+```
 
+O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
-## Requisitos Técnicos para a entrega do teste
+## Layout
 
-•	Pode utilizar qualquer library de CSS e CSS-in-JS. (recomendamos Material UI, Bootstrap ou Styled Components. Pode fazer com CSS clássico também)
-
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
-
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
-
-Boa sorte!
+<p align="center">
+    <img src=".github/layout-site.jpg" alt="Layout Site" />
+</p>
