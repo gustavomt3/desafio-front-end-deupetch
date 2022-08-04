@@ -34,8 +34,8 @@ const Cart = () => {
         </button>
         <ul className={styles.containerCart}>
           {state.products &&
-            state.products.map((data) => {
-              return <CardProductCart key={data.id} data={data} />;
+            state.products.map((stateInt) => {
+              return <CardProductCart key={stateInt.id} stateInt={stateInt} />;
             })}
         </ul>
       </div>

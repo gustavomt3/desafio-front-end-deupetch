@@ -5,6 +5,10 @@
   justify-content: space-between;
   width: 100%;
   height: max-content;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
   .picture {
     margin-right: 15px;
     img {

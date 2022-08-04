@@ -9,31 +9,32 @@ import iconTrash from '../../Assets/icon-trash.svg';
 //Components
 import ButtonQtd from '../ButtonQtd/ButtonQtd';
 
-const CardProductCart = ({ data }) => {
+const CardProductCart = ({ stateInt }) => {
   //Context
-  const { removeToCart } = React.useContext(GlobalContext);
+  const { removeToCart, state } = React.useContext(GlobalContext);
   //Component
-  const [countQtd, setCountQtd] = React.useState(0);
+  const [countQtd, setCountQtd] = React.useState(stateInt.qtd);
 
-  function modQtd(value) {
-    setCountQtd(countQtd + value);
+  function modQtd() {
+    setCountQtd(countQtd + 1);
+    stateInt.qtd = countQtd + 1;
   }
 
   return (
     <li className={styles.containerProductCart}>
       <div className={styles.picture}>
         <img
-          src={data.avatar.replace('food', `${data.name}?lock=12`)}
-          alt={data.name}
+          src={stateInt.avatar.replace('food', `${stateInt.name}?lock=12`)}
+          alt={stateInt.name}
         />
       </div>
       <div className={styles.infos}>
         <div className={styles.titleRemove}>
-          <p>{data.name}</p>
+          <p>{stateInt.name}</p>
           <button
             className={styles.remove}
             onClick={() => {
-              removeToCart(data);
+              removeToCart(stateInt);
             }}
           >
             <img src={iconTrash} alt="Icon Trash" />
@@ -42,10 +43,10 @@ const CardProductCart = ({ data }) => {
         <div className={styles.priceQtd}>
           <div className={styles.descriptionPrice}>
             <div className={styles.description}>
-              <p className={styles.dcpt}>{data.desciption}</p>
+              <p className={styles.dcpt}>{stateInt.description}</p>
               <p className={styles.price}>
                 <span>$</span>
-                {data.price}
+                {stateInt.price}
               </p>
             </div>
           </div>
@@ -54,14 +55,14 @@ const CardProductCart = ({ data }) => {
               onClick={() => {
                 modQtd(-1);
               }}
-              disabled={countQtd === 0 ? 'disabled' : ''}
+              disabled={countQtd === 1 ? 'disabled' : ''}
             >
               -
             </ButtonQtd>
             <span>{countQtd}</span>
             <ButtonQtd
               onClick={() => {
-                modQtd(+1);
+                modQtd(1);
               }}
               disabled={countQtd === 99 ? 'disabled' : ''}
             >

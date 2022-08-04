@@ -13,10 +13,12 @@ const CardProduct = ({ data }) => {
   //Context
   const { addToCart } = React.useContext(GlobalContext);
   //Component
-  const [countQtd, setCountQtd] = React.useState(0);
+  const [countQtd, setCountQtd] = React.useState(data.qtd);
 
   function modQtd(value) {
     setCountQtd(countQtd + value);
+    data.qtd = countQtd + 1;
+    console.log('data.qtd: ' + data.qtd, 'countQtd: ' + countQtd);
   }
 
   return (
@@ -31,7 +33,7 @@ const CardProduct = ({ data }) => {
         <h1>{data.name}</h1>
       </div>
       <div className={styles.description}>
-        <h2>{data.desciption}</h2>
+        <h2>{data.description}</h2>
       </div>
       <div className={styles.priceCount}>
         <div className={styles.price}>
@@ -43,7 +45,7 @@ const CardProduct = ({ data }) => {
               onClick={() => {
                 modQtd(-1);
               }}
-              disabled={countQtd === 0 ? 'disabled' : ''}
+              disabled={countQtd === 1 ? 'disabled' : ''}
             >
               -
             </ButtonQtd>
@@ -61,7 +63,7 @@ const CardProduct = ({ data }) => {
             <button
               className={styles.buttonCart}
               onClick={() => {
-                addToCart(data);
+                addToCart(data, countQtd);
               }}
             >
               <img src={iconCart} alt="Icon Cart" />
