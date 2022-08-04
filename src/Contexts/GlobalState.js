@@ -82,7 +82,6 @@ export const GlobalProvider = (props) => {
   React.useEffect(() => {
     const ii = withFilter(data, text);
     setDataWithFilter(ii);
-    console.log(ii);
   }, [text, data]);
 
   //------------------------------------------------
