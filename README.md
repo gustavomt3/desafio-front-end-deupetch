@@ -4,7 +4,7 @@
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gustavomt3/desafio-front-end-deupetch">
-  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/gustavomt3/desafio-front-end-deupetch/master">
+  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/gustavomt3/desafio-front-end-deupetch/main">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gustavomt3/desafio-front-end-deupetch">
 </p>
 <p align="center">
