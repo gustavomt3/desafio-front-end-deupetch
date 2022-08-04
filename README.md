@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/logo192.jpg" alt="Logo Deu Petch" />
+  <img src=".github/logo192.png" alt="Logo Deu Petch" />
 </p>
 
 <p align="center">
