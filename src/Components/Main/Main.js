@@ -10,7 +10,7 @@ import CardProduct from '../CardProduct/CardProduct';
 
 const Main = () => {
   //Context
-  const { loading, data } = React.useContext(GlobalContext);
+  const { loading, data, dataWithFilter } = React.useContext(GlobalContext);
 
   return (
     <main className={styles.containerMain}>
@@ -18,7 +18,7 @@ const Main = () => {
       <ul className={styles.containerCards}>
         {!loading &&
           data &&
-          data.map((data) => {
+          dataWithFilter.map((data) => {
             return <CardProduct key={data.id} data={data} />;
           })}
       </ul>

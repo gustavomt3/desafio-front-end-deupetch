@@ -1,4 +1,4 @@
-export default (state, action) => {
+const AppReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_CART':
       const arrProducts = [...state.products, action.payload.data];
@@ -26,7 +26,6 @@ export default (state, action) => {
         }),
       };
     case 'MOD_QTD':
-      console.log('Modificou');
       return {
         ...state,
         products: state.products.map((item) => {
@@ -41,3 +40,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default AppReducer;

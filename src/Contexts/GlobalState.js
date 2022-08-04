@@ -25,6 +25,8 @@ export const GlobalProvider = (props) => {
 
   //Component
   const [data, setData] = React.useState([]);
+  const [dataWithFilter, setDataWithFilter] = React.useState([]);
+  const [text, setText] = React.useState();
 
   //Fetch [Puxa os produtos da API]
   const getData = async () => {
@@ -55,6 +57,7 @@ export const GlobalProvider = (props) => {
       });
       //Seta a Array filtrada
       setData(mapData);
+      setDataWithFilter(mapData);
     } catch (err) {
       console.log('error', err);
     } finally {
@@ -65,6 +68,22 @@ export const GlobalProvider = (props) => {
   React.useEffect(() => {
     getData();
   }, []);
+  const withFilter = (products, term) => {
+    if (!term) {
+      return products;
+    } else {
+      return products.filter(
+        (product) => product.name.toLowerCase().includes(term.toLowerCase()),
+        setData,
+      );
+    }
+  };
+
+  React.useEffect(() => {
+    const ii = withFilter(data, text);
+    setDataWithFilter(ii);
+    console.log(ii);
+  }, [text, data]);
 
   //------------------------------------------------
   // Operações referentes aos comportamentos gerenciados por ContexAPI + Reducer
@@ -115,6 +134,9 @@ export const GlobalProvider = (props) => {
         data,
         ADD_QTD,
         modToCart,
+        text,
+        setText,
+        dataWithFilter,
       }}
     >
       {props.children}
