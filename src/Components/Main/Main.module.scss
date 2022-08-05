@@ -8,7 +8,10 @@
   align-items: center;
   background-color: $thirdColor;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 170px;
+  @include tablet {
+    padding-top: 100px;
+  }
   .containerCards {
     width: 100%;
     display: flex;
